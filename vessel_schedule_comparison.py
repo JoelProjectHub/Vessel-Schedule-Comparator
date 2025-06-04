@@ -126,11 +126,11 @@ def compare_schedules(df_word, df_excel):
         if not word_row['date']:
           continue
         if excel_match.empty:
-            comparison.append(f"❌ No match in Excel for {word_row['vessel']} on {word_row['date']}")
+            comparison.append(f"❌ No match in CSV for {word_row['vessel']} on {word_row['date']}")
         else:
             comparison.append(f"✅ Match for {word_row['vessel']} on {word_row['date']}")
             if excel_match['vessel discharge'].values[0] == 0:
-              comparison.append(f"··········· ❌ No units found in Excel")
+              comparison.append(f"··········· ❌ No units found in CSV")
 
     return comparison
 
